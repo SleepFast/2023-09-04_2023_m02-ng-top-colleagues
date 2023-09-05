@@ -1,4 +1,6 @@
 <div class="like-hate">
   <button class="like-hate__button--like" (click)="handleLikeClick()">j'aime</button>
+  <div class="like-hate__pos" *ngIf="pouet === 1">+{{ pouet }}</div>
   <button class="like-hate__button--hate" (click)="handleHateClick()">je deteste</button>
+  <div class="like-hate__neg" *ngIf="pouet === -1">{{ pouet }}</div>
 </div>

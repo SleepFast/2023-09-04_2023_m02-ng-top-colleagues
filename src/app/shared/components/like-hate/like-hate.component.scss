@@ -1,6 +1,7 @@
 .like-hate {
   display: flex;
   justify-content: space-evenly;
+  position: relative;
 
   button {
     width: 100px;
@@ -13,16 +14,61 @@
 
     &:active {
       opacity: 0.8;
-      transform: scale(0.92);
       border-color: black;
     }
   }
 
   &__button--like {
     background-color: #8bc34a69;
+
+    &:active {
+      transform: translateY(-10px) scale(1.05);
+    }
   }
 
   &__button--hate {
     background-color: #c34a4a69;
+
+    &:active {
+      transform: translateY(10px) scale(1.05);
+    }
+  }
+
+  &__pos {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    left: 25%;
+    top: -40px;
+    height: 40px;
+    color: green;
+    font-weight: bolder;
+    animation-name: slideOut;
+    animation-duration: .15s;
+  }
+
+  &__neg {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    right: 25%;
+    top: -40px;
+    height: 40px;
+    color: red;
+    font-weight: bolder;
+    animation-name: slideOut;
+    animation-duration: .15s;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    height: 40px;
+    opacity: 1;
+  }
+
+  to {
+    height: 0px;
+    opacity: 0.2;
   }
 }
