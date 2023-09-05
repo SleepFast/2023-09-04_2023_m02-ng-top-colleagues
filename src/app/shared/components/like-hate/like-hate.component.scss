@@ -1,0 +1,28 @@
+.like-hate {
+  display: flex;
+  justify-content: space-evenly;
+
+  button {
+    width: 100px;
+    padding: 10px 10px;
+    font-weight: bold;
+    border: solid 1px white;
+    border-radius: 10%;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:active {
+      opacity: 0.8;
+      transform: scale(0.92);
+      border-color: black;
+    }
+  }
+
+  &__button--like {
+    background-color: #8bc34a69;
+  }
+
+  &__button--hate {
+    background-color: #c34a4a69;
+  }
+}

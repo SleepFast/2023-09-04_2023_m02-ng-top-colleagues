@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-like-hate',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./like-hate.component.scss'],
 })
 export class LikeHateComponent {
+  @Output() likeHate:EventEmitter<number> = new EventEmitter<number>();
 
+  handleLikeClick() {
+    this.likeHate.emit(1)
+  }
+
+  handleHateClick() {
+    this.likeHate.emit(-1)
+  }
 }

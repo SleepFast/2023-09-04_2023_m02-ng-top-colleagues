@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Colleague } from 'src/app/models/colleague';
 
 @Component({
@@ -7,6 +7,9 @@ import { Colleague } from 'src/app/models/colleague';
   styleUrls: ['./colleague.component.scss']
 })
 export class ColleagueComponent {
-
   @Input() colleague!: Colleague ;
+
+  traiter(val: number) {
+    this.colleague.score = this.colleague.score + val
+  }
 }

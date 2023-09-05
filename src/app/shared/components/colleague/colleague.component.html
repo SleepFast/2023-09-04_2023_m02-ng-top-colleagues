@@ -1,4 +1,6 @@
-<p>colleague works!</p>
-<div class="colleague">{{ colleague.pseudo }}</div>
-<div class="colleague">{{ colleague.score }}</div>
-<div class="colleague">{{ colleague.photo }}</div>
+<div class="colleague">
+  <img src="{{ colleague.photo }}" alt="">
+  <h2>{{ colleague.pseudo }}</h2>
+  <p>{{ colleague.score }}</p>
+  <app-like-hate (likeHate)="traiter($event)"></app-like-hate>
+</div>

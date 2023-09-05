@@ -1,0 +1,13 @@
+.colleague {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  padding: 15px 30px;
+  border: solid 1px black;
+  border-radius: 10%;
+}
+
+app-like-hate {
+  width: 100%;
+}
