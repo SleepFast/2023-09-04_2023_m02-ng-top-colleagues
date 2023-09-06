@@ -1,0 +1,25 @@
+.voting-history {
+
+  @media screen and (min-width: 1000px) {
+    margin-top: 0;
+  }
+}
+
+.voting-history__list {
+  padding-inline-start: 0;
+}
+
+.voting-history__item {
+  display: flex;
+  padding: 10px 5px;
+  margin-bottom: 15px;
+  border: solid 1px black;
+}
+
+.voting-history__item-content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+}

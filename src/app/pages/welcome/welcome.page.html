@@ -1,0 +1,7 @@
+<div class="component-container">
+  <div class="welcome">
+    <button class="welcome-button">Raffraichir la liste</button>
+    <app-colleague-list [colleagueList]="mesColleagues"></app-colleague-list>
+  </div>
+  <app-voting-history [voteList]="mesVotes" (removeVote)="removeVote($event)"></app-voting-history>
+</div>
