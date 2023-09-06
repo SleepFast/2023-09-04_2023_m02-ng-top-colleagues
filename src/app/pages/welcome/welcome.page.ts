@@ -9,29 +9,6 @@ import { Vote } from 'src/app/models/vote';
   styleUrls: ['./welcome.page.scss']
 })
 export class WelcomePage {
-  mesColleagues: Array<Colleague> =
-  [
-    {
-    pseudo: 'pouet',
-    score: -999,
-    photo: `https://picsum.photos/id/${Math.floor(Math.random()*40)}/200`
-    },
-    {
-      pseudo: 'pit',
-      score: 999,
-      photo: `https://picsum.photos/id/${Math.floor(Math.random()*40)}/200`
-    },
-    {
-      pseudo: 'pat',
-      score: 999,
-      photo: `https://picsum.photos/id/${Math.floor(Math.random()*40)}/200`
-    },
-    {
-      pseudo: 'prout',
-      score: 999,
-      photo: `https://picsum.photos/id/${Math.floor(Math.random()*40)}/200`
-    }
-  ]
 
   mesVotes: Array<Vote> =
   [

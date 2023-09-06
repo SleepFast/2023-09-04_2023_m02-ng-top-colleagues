@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Colleague } from 'src/app/models/colleague';
+import { ColleagueService } from 'src/app/providers/colleague.service';
 
 @Component({
   selector: 'app-colleague-list',
@@ -7,5 +8,8 @@ import { Colleague } from 'src/app/models/colleague';
   styleUrls: ['./colleague-list.component.scss']
 })
 export class ColleagueListComponent {
-  @Input() colleagueList!: Array<Colleague>
+  constructor(private colleagueService: ColleagueService) {
+  }
+  // @Input() colleagueList!: Array<Colleague>
+  colleagueList = this.colleagueService.list()
 }
