@@ -1,7 +1,7 @@
 <div class="colleague">
   <img src="{{ colleague.photo }}" alt="">
   <h2>{{ colleague.pseudo | uppercase }}</h2>
-  <p>{{ colleague.score }}</p>
+  <p>{{ colleague.score | score}}</p>
   <app-like-hate [score]="colleague.score" (likeHate)="traiter($event)">
   </app-like-hate>
 </div>
