@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Vote } from 'src/app/models/vote';
+import { VoteService } from 'src/app/providers/vote.service';
 
 @Component({
   selector: 'app-voting-history',
@@ -7,11 +8,11 @@ import { Vote } from 'src/app/models/vote';
   styleUrls: ['./voting-history.component.scss']
 })
 export class VotingHistoryComponent {
-  @Input() voteList!: Array<Vote>;
+  constructor(private voteService: VoteService) { }
 
-  @Output() removeVote:EventEmitter<number> = new EventEmitter<number>();
+  voteList = this.voteService.list()
 
   handleRemoveClick(index: number) {
-    this.removeVote.emit(index)
+    this.voteList.splice(index, 1)
   }
 }

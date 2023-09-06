@@ -10,6 +10,6 @@ import { ColleagueService } from 'src/app/providers/colleague.service';
 export class ColleagueListComponent {
   constructor(private colleagueService: ColleagueService) {
   }
-  // @Input() colleagueList!: Array<Colleague>
+
   colleagueList = this.colleagueService.list()
 }
