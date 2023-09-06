@@ -8,9 +8,27 @@ import { Colleague } from './models/colleague';
 })
 export class AppComponent {
   title = 'top-colleagues';
-  monColleague: Colleague = {
+  mesColleagues: Array<Colleague> =
+  [
+    {
     pseudo: 'pouet',
-    score: 500,
-    photo: 'https://picsum.photos/200'
-  }
+    score: -999,
+    photo: `https://picsum.photos/id/${Math.floor(Math.random()*40)}/200`
+    },
+    {
+      pseudo: 'pit',
+      score: 999,
+      photo: `https://picsum.photos/id/${Math.floor(Math.random()*40)}/200`
+    },
+    {
+      pseudo: 'pat',
+      score: 999,
+      photo: `https://picsum.photos/id/${Math.floor(Math.random()*40)}/200`
+    },
+    {
+      pseudo: 'prout',
+      score: 999,
+      photo: `https://picsum.photos/id/${Math.floor(Math.random()*40)}/200`
+    }
+  ]
 }

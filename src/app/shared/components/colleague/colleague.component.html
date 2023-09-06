@@ -2,6 +2,6 @@
   <img src="{{ colleague.photo }}" alt="">
   <h2>{{ colleague.pseudo }}</h2>
   <p>{{ colleague.score }}</p>
-  <app-like-hate (likeHate)="traiter($event)">
+  <app-like-hate [score]="colleague.score" (likeHate)="traiter($event)">
   </app-like-hate>
 </div>
