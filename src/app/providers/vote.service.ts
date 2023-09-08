@@ -44,7 +44,6 @@ export class VoteService {
     const httpOptions = {
       headers: new HttpHeaders({ "Content-Type": "application/json" })
     };
-    console.log(`POUET`)
     this.http.post<Vote>(this.baseUrl,
           {
             pseudo: vote.colleague.pseudo,
