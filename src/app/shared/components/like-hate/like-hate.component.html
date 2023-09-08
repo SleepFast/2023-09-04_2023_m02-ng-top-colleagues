@@ -1,6 +1,6 @@
 <div class="like-hate">
   <button class="like-hate__button--like" (click)="handleLikeClick()" [disabled]="isTooHigh">j'aime</button>
-  <div class="like-hate__pos" *ngIf="pouet === 1">+{{ pouet }}</div>
+  <div class="like-hate__pos" *ngIf="pouet === 1">+ 100</div>
   <button class="like-hate__button--hate" (click)="handleHateClick()" [disabled]="isTooLow">je deteste</button>
-  <div class="like-hate__neg" *ngIf="pouet === -1">{{ pouet }}</div>
+  <div class="like-hate__neg" *ngIf="pouet === -1">- 200</div>
 </div>

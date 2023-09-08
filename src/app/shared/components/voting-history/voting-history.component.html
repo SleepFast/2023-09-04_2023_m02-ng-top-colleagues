@@ -4,7 +4,7 @@
     <img src="{{ vote.colleague.photo }}" alt="">
     <div class="voting-history__item-content">
       <strong class="voting-history__item-title">{{ vote.colleague.pseudo | uppercase}}</strong>
-      <p>{{ vote.colleague.pseudo }} est <span *ngIf="vote.likeHate === 0">cool</span><span *ngIf="vote.likeHate === 1">pas cool</span>, elle a désormais un score de {{ vote.colleague.score }}</p>
+      <p>{{ vote.colleague.pseudo }} est <span *ngIf="vote.colleague.score > 0">cool</span><span *ngIf="vote.colleague.score <= 0">pas cool</span>, elle a désormais un score de {{ vote.colleague.score }}</p>
       <button (click)="handleRemoveClick(index)">Supprimer</button>
     </div>
   </li>

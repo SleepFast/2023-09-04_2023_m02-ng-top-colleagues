@@ -6,6 +6,7 @@ import { ColleagueListComponent } from './components/colleague-list/colleague-li
 import { ScorePipe } from './pipes/score.pipe';
 import { VotingHistoryComponent } from './components/voting-history/voting-history.component';
 import { WelcomeModule } from '../pages/welcome/welcome.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 

@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { LikeHate } from 'src/app/models/like-hate';
 
 @Component({
   selector: 'app-like-hate',
@@ -15,7 +16,7 @@ export class LikeHateComponent {
   isTooLow = false
 
   handleLikeClick() {
-    this.likeHate.emit(1)
+    this.likeHate.emit(LikeHate.LIKE)
     this.pouet += 1
     if (this.score >= 999 ) {
       this.isTooHigh = true
@@ -28,7 +29,7 @@ export class LikeHateComponent {
   }
 
   handleHateClick() {
-    this.likeHate.emit(-1)
+    this.likeHate.emit(LikeHate.HATE)
     this.pouet -= 1
     if (this.score <= -999 ) {
       this.isTooLow = true

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Vote } from 'src/app/models/vote';
 import { VoteService } from 'src/app/providers/vote.service';
 
@@ -7,12 +7,17 @@ import { VoteService } from 'src/app/providers/vote.service';
   templateUrl: './voting-history.component.html',
   styleUrls: ['./voting-history.component.scss']
 })
-export class VotingHistoryComponent {
+export class VotingHistoryComponent implements OnInit {
   constructor(private voteService: VoteService) { }
 
-  voteList = this.voteService.list()
+  voteList: Vote[] = []
 
   handleRemoveClick(index: number) {
     this.voteList.splice(index, 1)
+  }
+
+  ngOnInit(): void {
+    this.voteList = this.voteService.list()
+    console.log(`POUET`, this.voteList)
   }
 }
