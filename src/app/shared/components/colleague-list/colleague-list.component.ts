@@ -14,7 +14,20 @@ export class ColleagueListComponent implements OnInit{
   constructor(private colleagueService: ColleagueService) {
   }
 
+  traiter(val: boolean) {
+    if (val) {
+      setTimeout(() => {
+        this.colleagueList = []
+        this.loadList()
+      }, 200);
+    }
+  }
+
   ngOnInit() {
+    this.loadList()
+  }
+
+  loadList() {
     this.colleagueService.getCollegues().subscribe((colleagues)=>{
       for(const colleague of colleagues){
         this.colleagueList.push(colleague);

@@ -45,20 +45,19 @@ export class VoteService {
       headers: new HttpHeaders({ "Content-Type": "application/json" })
     };
     this.http.post<Vote>(this.baseUrl,
-          {
-            pseudo: vote.colleague.pseudo,
-            like_hate: vote.likeHate.toString()
-          },
-          httpOptions
-        )
-        .subscribe(newVote => {
-          //console.log("données envoyées : " + vote.colleague.pseudo + " - " + vote.vote.toString());
-          this.mesVotes.unshift(vote);
-          this.action.next(vote);
-          if(this.mesVotes.length > 10){
-            this.mesVotes.pop();
-          }
-        })
+      {
+        pseudo: vote.colleague.pseudo,
+        like_hate: vote.likeHate.toString()
+      },
+      httpOptions
+    )
+    .subscribe(newVote => {
+      this.mesVotes.unshift(vote);
+      this.action.next(vote);
+      if(this.mesVotes.length > 10){
+        this.mesVotes.pop();
+      }
+    })
   }
 
 }
