@@ -8,6 +8,9 @@ import { VotingHistoryComponent } from './components/voting-history/voting-histo
 import { WelcomeModule } from '../pages/welcome/welcome.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CounterComponent } from './components/counter/counter.component';
+import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
+import { FormsModule } from '@angular/forms';
+import { FirstLastValidatorDirective } from './validators/first-last-validator.directive';
 
 
 
@@ -19,16 +22,20 @@ import { CounterComponent } from './components/counter/counter.component';
     ScorePipe,
     VotingHistoryComponent,
     CounterComponent,
+    CreateColleagueFormsComponent,
+    FirstLastValidatorDirective,
   ],
   imports: [
     CommonModule,
+    FormsModule
   ],
   exports: [
     LikeHateComponent,
     ColleagueComponent,
     ColleagueListComponent,
     VotingHistoryComponent,
-    CounterComponent
+    CounterComponent,
+    CreateColleagueFormsComponent
   ]
 })
 export class SharedModule { }

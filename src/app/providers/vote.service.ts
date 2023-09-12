@@ -51,7 +51,7 @@ export class VoteService {
       },
       httpOptions
     )
-    .subscribe(newVote => {
+    .subscribe(() => {
       this.mesVotes.unshift(vote);
       this.action.next(vote);
       if(this.mesVotes.length > 10){

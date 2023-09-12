@@ -18,6 +18,5 @@ export class VotingHistoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.voteList = this.voteService.list()
-    console.log(`POUET`, this.voteList)
   }
 }

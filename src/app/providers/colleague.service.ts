@@ -1,7 +1,8 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Colleague } from '../models/colleague';
 import { Observable } from "rxjs";
+import { Vote } from "../models/vote";
 
 @Injectable({
   providedIn: 'root'
@@ -33,8 +34,20 @@ export class ColleagueService {
     })
   }
 
+  addColleague(colleague: Colleague) {
+    const httpOptions = {
+      headers: new HttpHeaders({ "Content-Type": "application/json" })
+    };
+    return this.http.post<Colleague>(this.baseUrl,
+      colleague,
+      httpOptions
+    ).subscribe()
+  }
+
   getCollegues(): Observable<Colleague[]>{
     return this.http.get<Colleague[]>(this.baseUrl);
   }
+
+
 
 }
