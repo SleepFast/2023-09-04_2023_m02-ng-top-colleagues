@@ -1,9 +1,10 @@
 <form class="create-colleague-forms" (ngSubmit)="submit()" #createForm="ngForm" appFirstLastValidator>
   <div class="create-colleague-forms__inputContainer">
     <label>Pseudo</label>
-    <input name="pseudo" [(ngModel)]="monModel.pseudo" #pseudo="ngModel" required>
+    <input name="pseudo" [(ngModel)]="monModel.pseudo" #pseudo="ngModel" [ngModelOptions]="{ updateOn: 'blur'}" appPseudoValidator required>
   </div>
-  <p *ngIf="pseudo.dirty && pseudo.invalid">
+  <p *ngIf="pseudo.getError('errorPseudo') as error">{{ error }}</p>
+  <p *ngIf="pseudo.dirty && pseudo.hasError('required')">
     Le champ est requis
   </p>
   <div class="create-colleague-forms__inputContainer">
@@ -27,5 +28,6 @@
   <p *ngIf="photo.dirty && photo.invalid">
     Le champ est requis
   </p>
-  <button type="submit" *ngIf="createForm.dirty && createForm.valid">Ajouter</button>
+  <p *ngIf="createForm.getError('firstLast') as error">{{ error }}</p>
+  <button type="submit" [disabled]="createForm.invalid">AJOUTER</button>
 </form>

@@ -9,8 +9,11 @@ import { WelcomeModule } from '../pages/welcome/welcome.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CounterComponent } from './components/counter/counter.component';
 import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstLastValidatorDirective } from './validators/first-last-validator.directive';
+import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
+import { CreateColleagueReactiveFormsComponent } from './components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
+import { CreateColleagueReactivePage } from '../pages/create-colleague-reactive/create-colleague-reactive.page';
 
 
 
@@ -24,10 +27,13 @@ import { FirstLastValidatorDirective } from './validators/first-last-validator.d
     CounterComponent,
     CreateColleagueFormsComponent,
     FirstLastValidatorDirective,
+    PseudoValidatorDirective,
+    CreateColleagueReactiveFormsComponent,
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     LikeHateComponent,
@@ -35,7 +41,8 @@ import { FirstLastValidatorDirective } from './validators/first-last-validator.d
     ColleagueListComponent,
     VotingHistoryComponent,
     CounterComponent,
-    CreateColleagueFormsComponent
+    CreateColleagueFormsComponent,
+    CreateColleagueReactiveFormsComponent
   ]
 })
 export class SharedModule { }

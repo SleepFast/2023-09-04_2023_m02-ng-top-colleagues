@@ -11,8 +11,7 @@ export class FirstLastValidatorDirective  implements Validator {
   constructor() { }
 
   validate(control: AbstractControl): ValidationErrors | null {
-    console.log(`POUET`, control)
-    if (control.value.first !== control.value.last) {
+    if (control.value.first !== control.value.last || !control.value.first || !control.value.last) {
       return null
     } else {
       return {

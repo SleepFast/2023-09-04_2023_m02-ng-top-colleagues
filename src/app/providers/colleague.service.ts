@@ -48,6 +48,8 @@ export class ColleagueService {
     return this.http.get<Colleague[]>(this.baseUrl);
   }
 
-
+  getColleagueByPseudo(pseudo: string) {
+    return this.http.get<Colleague>(this.baseUrl + '/' +  pseudo)
+  }
 
 }

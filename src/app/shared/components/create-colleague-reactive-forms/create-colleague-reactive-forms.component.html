@@ -1,0 +1,33 @@
+<form class="create-colleague-forms" [formGroup]="monForm" (ngSubmit)="submit()" appFirstLastValidator>
+  <div class="create-colleague-forms__inputContainer">
+    <label>Pseudo</label>
+    <input formControlName="pseudo">
+  </div>
+  <p *ngIf="monForm.get('pseudo')?.getError('errorPseudo') as error">{{ error }}</p>
+  <p *ngIf="monForm.get('pseudo')?.hasError('required') && monForm.get('pseudo')?.dirty">
+    Le champ est requis
+  </p>
+  <div class="create-colleague-forms__inputContainer">
+    <label>Nom</label>
+    <input formControlName="last">
+  </div>
+  <p *ngIf="monForm.get('last')?.errors && monForm.get('last')?.dirty">
+    Le champ est requis et necessite 2 charactères minimum
+  </p>
+  <div class="create-colleague-forms__inputContainer">
+    <label>Prenom</label>
+    <input formControlName="first">
+  </div>
+  <p *ngIf="monForm.get('first')?.errors && monForm.get('first')?.dirty">
+    Le champ est requis et necessite 2 charactères minimum
+  </p>
+  <div class="create-colleague-forms__inputContainer">
+    <label>Photo URL</label>
+    <input formControlName="photo">
+  </div>
+  <p *ngIf="monForm.get('photo')?.errors && monForm.get('photo')?.dirty">
+    Le champ est requis
+  </p>
+  <p *ngIf="monForm.getError('firstLast') as error">{{ error }}</p>
+  <button type="submit" [disabled]="monForm.invalid">AJOUTER</button>
+</form>

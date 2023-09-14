@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { map } from 'rxjs';
 import { Colleague } from 'src/app/models/colleague';
 import { ColleagueService } from 'src/app/providers/colleague.service';
@@ -6,7 +6,8 @@ import { ColleagueService } from 'src/app/providers/colleague.service';
 @Component({
   selector: 'app-create-colleague-forms',
   templateUrl: './create-colleague-forms.component.html',
-  styleUrls: ['./create-colleague-forms.component.scss']
+  styleUrls: ['./create-colleague-forms.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CreateColleagueFormsComponent {
   monModel: Colleague = {
