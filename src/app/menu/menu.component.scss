@@ -23,14 +23,33 @@
 
 .menu__link {
   padding: 10px 15px;
-  background-color: blue;
   font-weight: bold;
   color: white;
   border-radius: 10px;
+  background-image: linear-gradient(90deg, blue, rgba(255,0,245,1) 50%, rgba(0,0,0,1) 100%);;
+  background-repeat: no-repeat;
+  background-size: 300% 100%;
+  background-position: 0;
+  letter-spacing: 1px;
+  transition: color 0.3s, background-position .6s cubic-bezier(.28, -0.04, 1, .96);
+
+  &:hover {
+    background-position: 100%;
+    transition: background-position .4s cubic-bezier(.28, -0.04, 1, .96);
+  }
 }
 
 .menu__link--focused {
-  background-color: white;
-  border: solid 1px blue;
-  color: blue;
+  border-radius: 10px;
+  background-image: linear-gradient(90deg, rgba(0,0,0,1), rgba(255,0,245,1) 50%, blue 100%);;
+  background-repeat: no-repeat;
+  background-size: 300% 100%;
+  background-position: 0;
+  letter-spacing: 1px;
+  transition: color 0.3s, background-position .6s cubic-bezier(.28, -0.04, 1, .96);
+
+  &:hover {
+    background-position: 100%;
+    transition: background-position .4s cubic-bezier(.28, -0.04, 1, .96);
+  }
 }
