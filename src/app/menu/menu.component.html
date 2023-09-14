@@ -1,0 +1,14 @@
+<nav class="menu">
+  <a class="menu__link--secondary" href="#colleague-list">MES COLLEAGUES</a>
+  <ul class="menu__list">
+    <li class="menu__item">
+      <a class="menu__link" (click)="handleLinkClick('welcomePage')" [class.menu__link--focused]="welcomePage" routerLink="/welcomePage">Accueil</a>
+    </li>
+    <li class="menu__item">
+      <a class="menu__link" (click)="handleLinkClick('template')" [class.menu__link--focused]="template" routerLink="/template">Formulaire piloté par le template</a>
+    </li>
+    <li class="menu__item">
+      <a class="menu__link" (click)="handleLinkClick('reactive')" [class.menu__link--focused]="reactive" routerLink="/reactive">Formulaire reactive</a>
+    </li>
+  </ul>
+</nav>

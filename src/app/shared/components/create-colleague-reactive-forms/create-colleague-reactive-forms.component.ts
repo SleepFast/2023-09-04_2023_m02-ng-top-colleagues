@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { catchError, map, Observable, of } from 'rxjs';
 import { Colleague } from 'src/app/models/colleague';
 import { ColleagueService } from 'src/app/providers/colleague.service';
@@ -21,7 +22,7 @@ export class CreateColleagueReactiveFormsComponent {
 
   monModel!: Colleague
 
-  constructor (private formBuilder: FormBuilder, private colleagueService: ColleagueService) {
+  constructor (private formBuilder: FormBuilder, private colleagueService: ColleagueService, private router: Router) {
     this.monForm = this.formBuilder.group({
       pseudo: [
         '',
@@ -59,6 +60,8 @@ export class CreateColleagueReactiveFormsComponent {
     }
 
     this.colleagueService.addColleague(this.monModel)
+
+    this.router.navigate(['/welcomePage']);
   }
 
 }

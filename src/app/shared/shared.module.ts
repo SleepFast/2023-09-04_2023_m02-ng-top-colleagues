@@ -14,6 +14,8 @@ import { FirstLastValidatorDirective } from './validators/first-last-validator.d
 import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
 import { CreateColleagueReactiveFormsComponent } from './components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
 import { CreateColleagueReactivePage } from '../pages/create-colleague-reactive/create-colleague-reactive.page';
+import { ColleagueDetailComponent } from './components/colleague-detail/colleague-detail.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -29,11 +31,13 @@ import { CreateColleagueReactivePage } from '../pages/create-colleague-reactive/
     FirstLastValidatorDirective,
     PseudoValidatorDirective,
     CreateColleagueReactiveFormsComponent,
+    ColleagueDetailComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   exports: [
     LikeHateComponent,
@@ -42,7 +46,8 @@ import { CreateColleagueReactivePage } from '../pages/create-colleague-reactive/
     VotingHistoryComponent,
     CounterComponent,
     CreateColleagueFormsComponent,
-    CreateColleagueReactiveFormsComponent
+    CreateColleagueReactiveFormsComponent,
+    ColleagueDetailComponent
   ]
 })
 export class SharedModule { }

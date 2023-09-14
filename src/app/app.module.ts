@@ -10,17 +10,21 @@ import { WelcomeModule } from './pages/welcome/welcome.module';
 import { WelcomePage } from './pages/welcome/welcome.page';
 import { CreateColleagueFormsComponent } from './shared/components/create-colleague-forms/create-colleague-forms.component';
 import { SharedModule } from './shared/shared.module';
+import { MenuComponent } from './menu/menu.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
     WelcomeModule,
     HttpClientModule,
     CreateColleagueModule,
-    CreateColleagueReactiveModule
+    CreateColleagueReactiveModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

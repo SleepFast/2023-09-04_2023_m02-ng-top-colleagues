@@ -1,6 +1,6 @@
 <div class="colleague">
   <img src="{{ colleague.photo }}" alt="">
-  <h2>{{ colleague.pseudo | uppercase }}</h2>
+  <a routerLink="/colleagues/{{colleague.pseudo}}">{{ colleague.pseudo | uppercase }}</a>
   <p>{{ colleague.score | score}}</p>
   <app-like-hate [score]="colleague.score" (likeHate)="traiter($event)">
   </app-like-hate>

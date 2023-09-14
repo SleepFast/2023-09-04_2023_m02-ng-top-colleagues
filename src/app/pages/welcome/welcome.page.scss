@@ -1,3 +1,12 @@
-.welcome-button {
-  margin-bottom: 10px;
+.welcome__button-container {
+  display: flex;
+}
+
+.welcome__button {
+  margin: 15px;
+  color: white;
+  font-weight: bold;
+  background-color: blue;
+  border-radius: 10px;
+  padding: 10px 15px;
 }

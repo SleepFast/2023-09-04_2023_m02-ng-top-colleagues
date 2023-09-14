@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { map } from 'rxjs';
 import { Colleague } from 'src/app/models/colleague';
 import { ColleagueService } from 'src/app/providers/colleague.service';
@@ -18,9 +19,10 @@ export class CreateColleagueFormsComponent {
     photo: ""
   }
 
-  constructor (private colleagueService: ColleagueService) {}
+  constructor (private colleagueService: ColleagueService, private router: Router) {}
 
   submit() {
     this.colleagueService.addColleague(this.monModel)
+    this.router.navigate(['/welcomePage']);
   }
 }
