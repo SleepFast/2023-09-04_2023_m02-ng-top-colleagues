@@ -2,13 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Colleague } from '../models/colleague';
+import { ColleagueService } from './colleague.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http:HttpClient, private route:Router) { }
+  constructor(private http:HttpClient, private route:Router, private colleagueService: ColleagueService) {}
 
   login(pseudo:string, mdp:string){
 

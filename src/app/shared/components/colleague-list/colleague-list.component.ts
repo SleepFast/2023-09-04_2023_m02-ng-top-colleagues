@@ -11,18 +11,10 @@ import { ColleagueService } from 'src/app/providers/colleague.service';
   styleUrls: ['./colleague-list.component.scss']
 })
 export class ColleagueListComponent implements OnInit{
-  actionSub: Subscription;
 
   colleagueList: Colleague[] = []
 
   constructor(private colleagueService: ColleagueService) {
-    this.actionSub = this.colleagueService.actionObs.subscribe(
-      (log: number) => {
-        if (log === 1) {
-          this.loadList()
-        }
-      }
-    );
   }
 
   traiter(val: boolean) {
@@ -34,6 +26,7 @@ export class ColleagueListComponent implements OnInit{
   }
 
   ngOnInit() {
+    this.colleagueService.loadList()
     this.colleagueList = this.colleagueService.list()
   }
 

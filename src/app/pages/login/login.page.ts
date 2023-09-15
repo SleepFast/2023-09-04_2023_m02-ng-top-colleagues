@@ -22,7 +22,7 @@ export class LoginPage {
   jwt:string|any;
   connexionOK:boolean = true;
 
-  constructor(private authService:AuthService, private route:Router, private formBuilder:FormBuilder, private colleagueService: ColleagueService){
+  constructor(private authService:AuthService, private route:Router, private formBuilder:FormBuilder){
     this.formLogin = this.formBuilder.group({
       pseudo: ['', Validators.required],
       password: ['', Validators.required]
@@ -36,7 +36,6 @@ export class LoginPage {
           this.jwt = login;
           if(this.jwt){
             localStorage.setItem("jwt", this.jwt.jwt);
-            this.colleagueService.action.next(1)
             this.route.navigate(["/welcomePage"]);
         }
       },
