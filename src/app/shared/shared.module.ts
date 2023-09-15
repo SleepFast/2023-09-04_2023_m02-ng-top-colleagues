@@ -16,6 +16,7 @@ import { CreateColleagueReactiveFormsComponent } from './components/create-colle
 import { CreateColleagueReactivePage } from '../pages/create-colleague-reactive/create-colleague-reactive.page';
 import { ColleagueDetailComponent } from './components/colleague-detail/colleague-detail.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { MenuComponent } from '../menu/menu.component';
 
 
 
@@ -32,6 +33,7 @@ import { AppRoutingModule } from '../app-routing.module';
     PseudoValidatorDirective,
     CreateColleagueReactiveFormsComponent,
     ColleagueDetailComponent,
+    MenuComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +49,8 @@ import { AppRoutingModule } from '../app-routing.module';
     CounterComponent,
     CreateColleagueFormsComponent,
     CreateColleagueReactiveFormsComponent,
-    ColleagueDetailComponent
+    ColleagueDetailComponent,
+    MenuComponent
   ]
 })
 export class SharedModule { }

@@ -5,13 +5,16 @@ import { CreateColleagueReactivePage } from './pages/create-colleague-reactive/c
 import { CreateColleaguePage } from './pages/create-colleague/create-colleague.page';
 import { WelcomePage } from './pages/welcome/welcome.page';
 import { ColleagueDetailComponent } from './shared/components/colleague-detail/colleague-detail.component';
+import { LoginPage } from './pages/login/login.page';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
-  { path: 'template', component: CreateColleaguePage },
-  { path: 'reactive', component: CreateColleagueReactivePage },
-  { path: 'welcomePage', component: WelcomePage },
-  { path: '', pathMatch: 'full', redirectTo: 'welcomePage' },
-  { path: 'colleagues/:pseudo', component: ColleagueDetailComponent }
+  { path: 'template', component: CreateColleaguePage, canActivate: [AuthGuard] },
+  { path: 'reactive', component: CreateColleagueReactivePage, canActivate: [AuthGuard] },
+  { path: 'welcomePage', component: WelcomePage, canActivate: [AuthGuard] },
+  { path: '', pathMatch: 'full', redirectTo: 'login'},
+  { path: 'colleagues/:pseudo', component: ColleagueDetailComponent, canActivate: [AuthGuard] },
+  { path:'login', component: LoginPage }
 ]
 
 @NgModule({

@@ -10,5 +10,12 @@
     <li class="menu__item">
       <a class="menu__link" (click)="handleLinkClick('reactive')" [class.menu__link--focused]="reactive" routerLink="/reactive">Formulaire reactive</a>
     </li>
+    <li class="menu__item">
+      <a class="menu__link" (click)="handleLinkClick('login')" [class.menu__link--focused]="login" routerLink="/login">Login</a>
+    </li>
   </ul>
 </nav>
+<div class="menu__logged">
+  <p>Yo, {{userLogged?.first}} {{userLogged?.last}} !</p>
+  <button class="menu__logged-button" (click)="deconnexion()">Déconnexion</button>
+</div>

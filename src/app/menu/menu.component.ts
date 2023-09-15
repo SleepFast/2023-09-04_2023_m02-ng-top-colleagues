@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Colleague } from '../models/colleague';
+import { AuthService } from '../providers/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,12 +10,29 @@ import { Location } from '@angular/common';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit{
-  welcomePage = true;
+  welcomePage = false;
   template = false;
   reactive = false;
+  login = true;
 
-  constructor(private location: Location) {}
+  userLogged:Colleague | null = null;
 
+  constructor(private authService: AuthService, private location: Location){
+    this.authService.getUserLoggedIn().subscribe((user) => {
+      this.userLogged = {
+        pseudo: user.pseudo,
+        first: user.first,
+        last: user.last,
+        score: user.score,
+        photo: user.photo
+      };
+    })
+
+  }
+
+  deconnexion(){
+    this.authService.logOut();
+  }
 
   ngOnInit(): void {
     switch (this.location.prepareExternalUrl(this.location.path())) {
@@ -21,44 +40,65 @@ export class MenuComponent implements OnInit{
         this.welcomePage = true;
         this.template = false;
         this.reactive = false;
+        this.login = false;
         break;
       case '/template':
         this.welcomePage = false;
         this.template = true;
         this.reactive = false;
+        this.login = false;
         break;
       case '/reactive':
         this.welcomePage = false;
         this.template = false;
         this.reactive = true;
+        this.login = false;
         break;
-      default:
-        this.welcomePage = true;
+      case '/login':
+        this.welcomePage = false;
         this.template = false;
         this.reactive = false;
+        this.login = true;
+        break;
+      default:
+        this.welcomePage = false;
+        this.template = false;
+        this.reactive = false;
+        this.login = true;
     }
   }
+
   handleLinkClick(link: string) {
     switch (link) {
       case 'welcomePage':
         this.welcomePage = true;
         this.template = false;
         this.reactive = false;
+        this.login = false;
         break;
       case 'template':
         this.welcomePage = false;
         this.template = true;
         this.reactive = false;
+        this.login = false;
         break;
       case 'reactive':
         this.welcomePage = false;
         this.template = false;
         this.reactive = true;
+        this.login = false;
         break;
-      default:
-        this.welcomePage = true;
+      case 'login':
+        this.welcomePage = false;
         this.template = false;
         this.reactive = false;
+        this.login = true;
+        break;
+      default:
+        this.welcomePage = false;
+        this.template = false;
+        this.reactive = false;
+        this.login = true;
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Colleague } from 'src/app/models/colleague';
 import { ColleagueService } from 'src/app/providers/colleague.service';
@@ -6,7 +6,8 @@ import { ColleagueService } from 'src/app/providers/colleague.service';
 @Component({
   selector: 'app-colleague-detail',
   templateUrl: './colleague-detail.component.html',
-  styleUrls: ['./colleague-detail.component.scss']
+  styleUrls: ['./colleague-detail.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ColleagueDetailComponent {
 

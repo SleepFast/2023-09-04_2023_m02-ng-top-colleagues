@@ -1,16 +1,22 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Colleague } from '../models/colleague';
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 import { Vote } from "../models/vote";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ColleagueService {
-  baseUrl: string = "https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/colleagues"
+  baseUrl: string = "https://app-005f27d8-9033-48cc-ba69-b798464dee52.cleverapps.io/api/v2/colleagues"
 
   listColleagues: Colleague[] = []
+
+  public action = new Subject<number>();
+
+  get actionObs(){
+    return this.action.asObservable();
+  }
 
   constructor(private http:HttpClient) {
     this.loadList();
@@ -41,7 +47,9 @@ export class ColleagueService {
     return this.http.post<Colleague>(this.baseUrl,
       colleague,
       httpOptions
-    ).subscribe()
+    ).subscribe(() => {
+      this.action.next(1)
+    })
   }
 
   getCollegues(): Observable<Colleague[]>{
