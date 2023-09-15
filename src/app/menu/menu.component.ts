@@ -13,7 +13,6 @@ export class MenuComponent implements OnInit{
   welcomePage = false;
   template = false;
   reactive = false;
-  login = true;
 
   userLogged:Colleague | null = null;
 
@@ -40,31 +39,21 @@ export class MenuComponent implements OnInit{
         this.welcomePage = true;
         this.template = false;
         this.reactive = false;
-        this.login = false;
         break;
       case '/template':
         this.welcomePage = false;
         this.template = true;
         this.reactive = false;
-        this.login = false;
         break;
       case '/reactive':
         this.welcomePage = false;
         this.template = false;
         this.reactive = true;
-        this.login = false;
-        break;
-      case '/login':
-        this.welcomePage = false;
-        this.template = false;
-        this.reactive = false;
-        this.login = true;
         break;
       default:
-        this.welcomePage = false;
+        this.welcomePage = true;
         this.template = false;
         this.reactive = false;
-        this.login = true;
     }
   }
 
@@ -74,31 +63,21 @@ export class MenuComponent implements OnInit{
         this.welcomePage = true;
         this.template = false;
         this.reactive = false;
-        this.login = false;
         break;
       case 'template':
         this.welcomePage = false;
         this.template = true;
         this.reactive = false;
-        this.login = false;
         break;
       case 'reactive':
         this.welcomePage = false;
         this.template = false;
         this.reactive = true;
-        this.login = false;
-        break;
-      case 'login':
-        this.welcomePage = false;
-        this.template = false;
-        this.reactive = false;
-        this.login = true;
         break;
       default:
-        this.welcomePage = false;
+        this.welcomePage = true;
         this.template = false;
         this.reactive = false;
-        this.login = true;
     }
   }
 }
